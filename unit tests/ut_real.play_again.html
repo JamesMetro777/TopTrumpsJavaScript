@@ -1,0 +1,18 @@
+<script src='soap_stars.js'></script>
+ <script>
+
+function play_again()
+ {
+  return confirm("Do you want to play again?");
+ }
+ while(play_again())
+  {
+    var category = get_category_from_user();
+    var deck = get_deck(category);
+    shuffle(deck);
+    deal(deck);
+    var card = get_top_card(whos_turn);
+    get_random_feature(card);
+    who_wins(user_value,computer_value);
+  }
+ </script> 

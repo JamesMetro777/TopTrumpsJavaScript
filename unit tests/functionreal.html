@@ -1,0 +1,150 @@
+<pre>
+  <script src='soap_stars.js'></script>
+  <script src='cars.js'></script>
+  <script>
+   //Data
+
+ // Global data
+   var category = ['soap_stars', 'cars'];
+   var deck = []; 
+   var computer_hand = [];
+   var user_hand = [];
+   var user_card;
+   var computer_card;
+   var feature;
+   var user_value;
+   var computer_value;
+   var computer_total = 0;
+   var user_total = 0;
+   var rounds;
+   var whos_turn = ["user"]; // default: user plays first
+
+  
+   //all the functions to do with the game
+   
+  function get_deck()
+  /* it checks whether or not it is true. If it is true then it returns either
+     cars or soap stars depending on option choosen */
+  {
+   if (document.getElementById("cars").checked) return cars;
+   if (document.getElementById("soap_stars").checked) return  soap_stars;
+  }
+  // end function being tested
+
+
+  
+
+function shuffle(deck)
+  { 
+  /* The computer will shuffle the deck of cards and give the cards
+     back in a random order */
+    { 
+    var b = [];
+    var l = deck.length;
+    
+    for( i=0; i<l; i++ )
+    {
+     var r = Math.floor ( Math.random ()*l);
+     while ( b[r] != null )
+     {
+      r++;
+      if (r==l) r=0;
+     }
+     b[r] = deck[i];
+    }
+    return b;
+   }  
+  }
+
+function deal(deck)
+ /*The computer will deal the cards so each player will get an even
+   number of cards and all the cards */ 
+ {
+  while (deck.length>1)
+  {
+   computer_hand.unshift(deck.shift());
+   user_hand.unshift(deck.shift());
+  }
+ }
+
+function get_top_card(hand)
+ /*  You take a card on the top and push it to the end and it returns that card*/
+ { 
+  var card = hand.shift();
+  hand.push(card);
+  return card;
+ }
+  
+ function get_random_feature(card)
+ /* the player will pick a feature of there choice when the computer will pick one*/
+ {
+  var properties = [];
+  for(property in card)
+  {
+   properties.push(property);
+  }
+  properties.shift();
+  rand = Math.floor((Math.random()*properties.length));
+  return properties[rand];
+ }
+  
+ function get_value(card,feature)
+ {
+  return eval("card." + feature);
+ }
+  
+ function who_wins(user_value,computer_value)
+  /* The cards will be added up and the computer will tell you who wins or not*/
+ {
+  if (user_value < computer_value)
+  {
+   computer_total++;  
+   document.write("computer wins" + "<br>");
+  }
+  else if (user_value > computer_value)
+  {
+   user_total++;
+   document.write("user wins" + "<br>");
+  }
+  else
+  {
+   document.write ("No one wins" + "<br>");
+  }
+ }
+
+ 
+  function play_again()
+  /* The computer will give you the option to play the game again or not*/
+  {
+   document.write(computer_total+ " " + user_total);
+   return confirm("Do you want to play again?");
+  }
+
+function play()
+ {
+  deck = get_deck(category);
+  //document.write("Deck = "+deck +"<br>");
+  deck = shuffle(deck);
+  deal(deck);
+  user_card = get_top_card(user_hand);
+  alert("Let's Play")
+  document.write("User Card = "+user_card.name +"<br>");
+  computer_card = get_top_card(computer_hand);
+  document.write("Computer Card = "+computer_card.name +"<br>");
+  feature = get_random_feature(user_card);
+  user_value = get_value(user_card,feature);
+  document.write(user_card.name + " " + feature + " = "+user_value +"<br>");
+  computer_value = get_value(computer_card,feature);
+  document.write(computer_card.name + " " + feature + " = "+computer_value +"<br>");
+  who_wins(user_value,computer_value);  
+ }
+  
+  </script>
+  </pre>
+  <body>
+   <input type="radio" id="cars" name="deck" value="cars">Cars<br>
+   <input type="radio" id="soap_stars" name="deck" value="soap_stars">Soap Stars<br>
+   <input type="button" name="category" value="Play" onClick="play()"> 
+  </body>
+
+ 

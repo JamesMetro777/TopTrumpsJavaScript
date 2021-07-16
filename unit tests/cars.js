@@ -1,0 +1,22 @@
+var cars = [
+ {name:"Porsche 911 GT1"           , speed:235, zero_to_sixty:3.6, power:900,  price:230000 ,  rating:6},
+ {name:"Lamborghini Aventador"     , speed:217, zero_to_sixty:2.9, power:690,  price:250000 ,  rating:6},
+ {name:"Ferrari F12"               , speed:225, zero_to_sixty:3  , power:730,  price:240000 ,  rating:9.9},
+ {name:"LaFerrari"                 , speed:217, zero_to_sixty:2  , power:789,  price:1000000,  rating:7},
+ {name:"Mclaren P1"                , speed:217, zero_to_sixty:2.6, power:890,  price:836000 ,  rating:5},
+ {name:"Koenigsegg Agera R"        , speed:273, zero_to_sixty:2.7, power:1140, price:1000000,  rating:10},
+ {name:"Lamborghini Sesto Elemento", speed:219, zero_to_sixty:2.4, power:570,  price:2500000,  rating:8},
+ {name:"Ferrari SP12 EC"           , speed:220, zero_to_sixty:3  , power:570,  price:3000000,  rating:9},
+ {name:"Ferrari Enzo"              , speed:221, zero_to_sixty:3  , power:651,  price:800000,   rating:6},
+ {name:"Ferrari FXX Evoluzione"    , speed:250, zero_to_sixty:3.1, power:850,  price:3000000,  rating:9},
+ {name:"Lamborghini Reventon"      , speed:221, zero_to_sixty:3.1, power:690,  price:840000,   rating:9.8},
+ {name:"Pagani Huayra"             , speed:235, zero_to_sixty:3  , power:720,  price:1000000,  rating:10},
+ {name:"Pagani Zonda Revolucion"   , speed:230, zero_to_sixty:1.5, power:800,  price:1750000,  rating:9.7},
+ {name:"Porsche 918 Spyder"        , speed:214, zero_to_sixty:3  , power:887,  price:497726,   rating:6},
+ {name:"Aston Martin One-77"       , speed:200, zero_to_sixty:3.5, power:750,  price:1150000,  rating:8},
+ {name:"Maserati MC12"             , speed:205, zero_to_sixty:3.5, power:700,  price:500000,   rating:9.5},
+ {name:"Saleen S7"                 , speed:220, zero_to_sixty:3.3, power:750,  price:957000,   rating:9.3},
+ {name:"GTA Spano"                 , speed:217, zero_to_sixty:2  , power:900,  price:1000000,  rating:8.7},
+ {name:"Lamborghini Gallardo LP 570",speed:200, zero_to_sixty:3  , power:700,  price:240000,   rating:6.5},
+ {name:"Jaguar C-X75"              , speed:205, zero_to_sixty:2.9, power:850,  price:700000,   rating:9.95}
+ ];

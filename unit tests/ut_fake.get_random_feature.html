@@ -1,0 +1,32 @@
+<script src='cars.js'></script>
+<script>
+
+var user_card;
+var computer_card;
+var user_value;
+var computer_value;
+var whos_turn = ["user"]; 
+
+function get_random_feature(card)
+{
+/* features on cars card
+	name,speed,zero_to_sixty,power,price,rating
+*/
+	var properties = [];
+	for(values in card)
+	{
+		properties.push(values);
+	}
+	rand = Math.floor((Math.random()*properties.length));
+	return properties[rand];
+//	computer_value = computer_card[0].power;	
+}
+
+card = cars[0];
+feature = get_random_feature(card);
+
+//user_value = get_value(user_card,feature);
+//computer_value = get_value(computer_card,feature);
+document.write("235");
+//document.write(computer_value + "<br>");
+</script>

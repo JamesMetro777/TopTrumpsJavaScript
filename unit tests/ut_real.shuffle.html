@@ -1,0 +1,41 @@
+<script src='soap_stars.js'></script>
+ <script src='cars.js'></script>
+  <script>
+  // unit test for shuffle
+  
+  function shuffle(deck)
+  // The computer will shuffle the deck of cards and give the cards back in a random order
+
+ { 
+  var b = [];
+  var l = deck.length;
+  
+  for( i=0; i<l; i++ )
+  {
+   var r = Math.floor ( Math.random ()*l);
+   while ( b[r] != null )
+   {
+    r++;
+    if (r==l) r=0;
+   }
+   b[r] = deck[i];
+  }
+  return b;
+ }  
+  
+ var deck= soap_stars;
+
+for (var i = 0; i < deck.length; i++) 
+ { 
+  document.write( deck[i].name + "<br>");
+ }
+
+deck = shuffle(deck);
+
+document.write("<br>");
+
+for (var i = 0; i < deck.length; i++) 
+ { 
+  document.write( deck[i].name + "<br>");
+ }
+  </script> 

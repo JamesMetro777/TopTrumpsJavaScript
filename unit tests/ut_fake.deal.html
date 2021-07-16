@@ -1,0 +1,16 @@
+<script src='cars.js'></script>
+<script>
+var computer_hand = [];
+var user_hand = [];
+
+function deal(deck)
+{
+  computer_hand = [deck[0], deck[2]];
+  user_hand = [deck[1], deck[3]];
+} 
+
+deal(cars);
+
+alert(computer_hand.length + "," + user_hand.length); 
+ 
+</script>

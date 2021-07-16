@@ -1,0 +1,19 @@
+<script src='cars.js'></script>
+<script>
+var computer_hand = [];
+var user_hand = [];
+
+function deal(deck)
+{
+ while (deck.length>1)
+ {
+	computer_hand.unshift(deck.shift());
+	user_hand.unshift(deck.shift());
+ }
+} 
+
+deal(cars);
+
+alert(computer_hand.length + "," + user_hand.length); 
+ 
+</script>

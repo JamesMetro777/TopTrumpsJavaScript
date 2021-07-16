@@ -1,0 +1,11 @@
+<script>
+var card = {name:"Porsche 911 GT1",speed:235,zero_to_sixty:3.6,power:900,price:230000,rating:6};
+var feature = "speed";
+
+function get_value(card,feature)
+{
+	alert( eval("card." + feature));
+}
+
+document.write(get_value(card,feature));
+</script>

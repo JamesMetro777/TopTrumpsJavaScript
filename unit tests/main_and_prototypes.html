@@ -1,0 +1,109 @@
+<pre>
+  <script src='soap_stars.js'></script>
+  <script src='cars.js'></script>
+  <script>
+   //Data
+
+ // Global data
+   var category = ['soap_stars', 'cars'];
+   var user_value;
+   var computer_value;
+   var hand_computer = [];
+   var hand_user = [];
+   var computer_hand;
+   var user_hand;
+   var computer_total;
+   var user_total;
+   var rounds;
+   var whos_turn = ["user"]; // default: user plays first
+   
+   
+   //actions
+   function get_category_from_user()
+   /*The user will have to pick either Cars or Soap stars from a drop down box*/
+   {
+   return "cars";
+   }
+   
+  function get_deck(category)
+  /* When the user has selected the card deck, the computer will return the same deck of crads*/
+  {
+    if (category == "cars") return cars;
+    
+  }
+
+function shuffle(deck)
+  /* The computer will shuffle the deck of cards and give the cards back in a random order*/
+{ 
+	var b = [];
+	var l = deck.length;
+  
+	for( i=0; i<l; i++ )
+  {
+   var r = Math.floor ( Math.random ()*l);
+   while ( b[r] != null )
+   {
+		r++;
+		if (r==l) r=0;
+   }
+   b[r] = deck[i];
+  }
+  return b;
+}  
+  
+
+function deal (deck)
+ /*The computer will deal the cards so each player will get an even number of cards*/ 
+  {
+    computer_hand = [deck[0], deck [2]];
+    user_hand = [deck[1], deck[3]];
+   } 
+
+function get_top_card(whos_turn)
+  /* The computer will get the card for who evers turn it is*/
+  { 
+   document.write(computer_hand[0].name);
+   return computer_hand[0].name;
+  }
+
+function get_random_feature(whos_turn,card)
+  /* the play will pick a feautre of there choice when the computer will pick one*/
+  {
+   user_value = user_hand[0].speed;
+   computer_value = computer_hand[0].speed
+   document.write(user_value + "<br>");
+   document.write(computer_value + "<br>");
+   }
+
+function who_wins(user_value,computer_value)
+  /* The cards will be added up and the computer will tell you who wins*/
+  {
+   document.write("computer wins<br>");
+  } 
+
+function play_again()
+  /* The computer will give you an option if you want to play the game again or not*/
+  {
+   // display totals
+   // switch player
+   return confirm("Do you want to play again?");
+  }
+
+while(play_again())
+  {
+    var category = get_category_from_user();
+    var deck = get_deck(category);
+    shuffle(deck);
+    deal(deck);
+    var card = get_top_card(whos_turn);
+    get_random_feature(card);
+    who_wins(user_value,computer_value);
+  }
+
+</script>
+  </pre>
+  <body>
+   <input type="radio" name="deck" value="cars">Cars<br>
+   <input type="radio" name="deck" value="soap_stars">Soap Stars<br>
+   <input type="button" name="category" value="Send" onClick="get_deck();">
+  </body>

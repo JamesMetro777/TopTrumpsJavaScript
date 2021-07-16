@@ -1,0 +1,22 @@
+<script src='soap_stars.js'></script>
+<script src='cars.js'></script>
+<script>
+
+// begin function being tested
+function get_deck()
+{
+	if (document.getElementById("cars").checked) return cars;
+	if (document.getElementById("soap_stars").checked) return soap_stars;
+}
+// end function being tested
+
+function do_test()
+{
+	var deck = get_deck();
+	alert(deck[0].name);
+}
+
+</script>
+<input type="radio" id="cars" name="deck" value="cars">Cars<br>
+<input type="radio" id="soap_stars" name="deck" value="soap_stars">Soap Stars<br>
+<input type="button" name="category" value="Send" onClick="do_test()"> 

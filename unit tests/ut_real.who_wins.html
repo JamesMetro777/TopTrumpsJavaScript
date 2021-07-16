@@ -1,0 +1,30 @@
+<script src='soap_stars.js'></script>
+ <script>
+ var computer_total=0;
+ var user_total=0;
+ //unit test for who wins.
+
+function who_wins (user_value, computer_value)
+ {
+ //The cards will be added up and the computer will tell you who wins.
+  if (computer_value > user_value)
+  {
+   computer_total++;
+   document.write("Computer wins" + "<br>");
+  }
+
+ else if (user_value> computer_value)
+  {
+   user_total++;
+   document.write("User wins" + "<br>");
+  }
+
+ else (user_value == computer_value)
+  {
+   document.write("No one wins" + "<br>");
+  }
+ }
+
+who_wins(1,2);
+ document.write(computer_total+ " " +user_total);
+ </script>
